@@ -51,7 +51,6 @@ public class CustomUserDetails implements UserDetails {
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
         // Mặc định mình sẽ để tất cả là ROLE_USER. Để demo cho đơn giản.
-        System.out.println(getRole());
         String role="ROLE_"+getRole().toUpperCase();
         return Collections.singleton(new SimpleGrantedAuthority(role));
     }

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -38,7 +39,7 @@ public class AuthController {
         return ResponseEntity.ok("Login successful!");
     }
     
-
+    @CrossOrigin(origins = "http://localhost:9000")
     @PostMapping("/login")
     public String  login(@RequestBody LoginRequest loginRequest) {
         
@@ -49,10 +50,10 @@ public class AuthController {
             SecurityContextHolder.getContext().setAuthentication(authentication);
             CustomUserDetails userDetails = (CustomUserDetails) authentication.getPrincipal();
             String jwt = tokenProvider.generateToken(userDetails);
-        return "Bearer "+jwt;
+        return jwt;
         
     }
-
+    @CrossOrigin(origins = "http://localhost:9000")
     @GetMapping("/random")
     public String randomStuff(){
         return "JWT Hợp lệ mới có thể thấy được message này";

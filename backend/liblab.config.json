@@ -1,0 +1,77 @@
+{
+  "sdkName": "test-sdk",
+  "apiVersion": "1.0.0",
+  "apiName": "test-api",
+  "specFilePath": "./openapi.json",
+   "baseUrl": "http://localhost:8080",
+  "languages": [
+    "go",
+    "java",
+    "python",
+    "typescript"
+  ],
+  "auth": [
+    "bearer"
+  ],
+  "customizations": {
+    "includeOptionalSnippetParameters": true,
+    "authentication": {
+      "access": {
+        "prefix": "Bearer"
+      }
+    },
+    "devContainer": true,
+    "generateEnv": true,
+    "inferServiceNames": false,
+    "injectedModels": [],
+    "license": {
+      "type": "NONE"
+    },
+    "responseHeaders": false,
+    "retry": {
+      "enabled": true,
+      "maxAttempts": 3,
+      "retryDelay": 150
+    }
+  },
+  "languageOptions": {
+    "python": {
+      "alwaysInitializeOptionals": false,
+      "pypiPackageName": "",
+      "githubRepoName": "",
+      "ignoreFiles": [],
+      "sdkVersion": "1.0.0",
+      "liblabVersion": "2"
+    },
+    "typescript": {
+      "bundle": true,
+      "exportClassDefault": false,
+      "httpClient": "fetch",
+      "npmName": "",
+      "npmOrg": "",
+      "githubRepoName": "",
+      "ignoreFiles": [],
+      "sdkVersion": "1.0.0",
+      "liblabVersion": "2",
+      "generateEnumAs": "union"
+    },
+    "go": {
+      "goModuleName": "github.com/swagger-api/swagger-petstore",
+      "githubRepoName": "",
+      "ignoreFiles": [],
+      "sdkVersion": "1.0.0",
+      "liblabVersion": "2"
+    },
+    "java": {
+      "groupId": "com.swagger",
+      "artifactId": "petstore",
+      "ignoreFiles": [],
+      "sdkVersion": "1.0.0",
+      "liblabVersion": "2",
+      "includeKotlinSnippets": false
+    }
+  },
+  "publishing": {
+    "githubOrg": ""
+  }
+}
